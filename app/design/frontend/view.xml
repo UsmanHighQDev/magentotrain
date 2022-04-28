@@ -1,0 +1,7 @@
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <image id="category_page_grid" type="small_image">
+        <width>350</width>
+        <height>350</height>
+    </image>
+</view>
+
