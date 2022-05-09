@@ -1,1 +1,21 @@
-<h1>Welcome to Magento</h1>
+
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->create('Magento\Customer\Model\Session');
+
+if ($customerSession->isLoggedIn()) {
+    $customerSession->getCustomerId();
+    $customerSession->getCustomerGroupId();
+    $customerSession->getCustomer();
+    $customerSession->getCustomerData();
+
+    echo $customerSession->getCustomer()->getLastname();
+    echo "<br>";
+    echo $customerSession->getCustomer()->getFirstname();
+    echo "<br>";
+    echo $customerSession->getCustomer()->getEmail();
+}
+else{
+   echo "customer not logged in";
+}
+?>
