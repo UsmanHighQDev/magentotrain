@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace HighQDev\Core\Controller\Main;
+
 class Index extends \Magento\Framework\App\Action\Action
 {
     /**
