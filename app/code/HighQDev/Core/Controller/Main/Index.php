@@ -9,7 +9,6 @@ class Index extends \Magento\Framework\App\Action\Action
      * @var \Magento\Framework\View\Result\PageFactory
      */
     protected $_pageFactory;
-
     /**
      * Index constructor.
      * @param \Magento\Framework\App\Action\Context $context
@@ -22,13 +21,12 @@ class Index extends \Magento\Framework\App\Action\Action
         $this->_pageFactory = $pageFactory;
         return parent::__construct($context);
     }
-
     /**
      * @return \Magento\Framework\View\Result\Page
      */
     public function execute()
     {
-        echo "this is my controller";
+        //echo "this is my controller";
         return $this->_pageFactory->create();
     }
 }
