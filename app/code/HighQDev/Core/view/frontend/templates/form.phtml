@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var $block \HighQDev\Core\Block\Form
+ */
+?>
+
+
+<div>
+    <h2>Add Comment </h2>
+    <form method="POST" action="<?php echo $block->getUrl('core/message/index'); ?>">
+        <label for="sku">SKU:</label><br>
+        <input type="text" id="sku" name="sku">
+        <br/>
+        <label for="msg">Message:</label>
+        <br/>
+        <input type="text" id="msg" name="msg">
+        <br/>
+        <input type="submit">
+    </form>
+</div>
