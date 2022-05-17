@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="highqdev_customer_comments" resource="default" engine="innodb" comment="Comments table for customers">
+        <column xsi:type="int" name="Id" unsigned="false" nullable="false" identity="true"
+                comment="ID"/>
+        <column xsi:type="varchar" name="SKU" nullable="false" length="25" comment="SKU"/>
+        <column xsi:type="varchar" name="Comment" nullable="false" length="50" comment="Message"/>
+        <column xsi:type="boolean" name="Approved" nullable="false" comment="Approved"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="Id"/>
+        </constraint>
+    </table>
+</schema>
