@@ -16,6 +16,7 @@ class Index extends \Magento\Framework\View\Element\Template
      * @var Session
      */
     protected $_customerSession;
+    protected $_commentFactory;
 
     /**
      * Index constructor.
@@ -26,9 +27,11 @@ class Index extends \Magento\Framework\View\Element\Template
     public function __construct(
         Context $context,
         Session $_customerSession,
+        \HighQDev\Core\Model\CommentsFactory $commentsFactory,
         array $data = []
     ) {
         $this->_customerSession = $_customerSession;
+        $this->_commentFactory = $commentsFactory;
 
         parent::__construct($context, $data);
     }
@@ -51,5 +54,15 @@ class Index extends \Magento\Framework\View\Element\Template
             'name' => $customer->getFirstname() . $customer->getLastname(),
             'email' => $customer->getEmail()
         ];
+    }
+
+    /**
+     * @return \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
+     */
+    public function getResult()
+    {
+        $comment = $this->_commentFactory->create();
+        $collection = $comment->getCollection();
+        return $collection;
     }
 }
