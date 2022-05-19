@@ -10,6 +10,24 @@ namespace HighQDev\Core\Controller\Message;
 class Index extends \Magento\Framework\App\Action\Action
 {
     /**
+     * @var \HighQDev\Core\Model\CommentsFactory
+     */
+    protected $_commentFactory;
+
+    /**
+     * Index constructor.
+     * @param \Magento\Framework\App\Action\Context $context
+     * @param \HighQDev\Core\Model\CommentsFactory $commentsFactory
+     */
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        \HighQDev\Core\Model\CommentsFactory $commentsFactory
+    ) {
+        $this->_commentFactory = $commentsFactory;
+        return parent::__construct($context);
+    }
+
+    /**
      * @return \Magento\Framework\Controller\ResultInterface
      */
     public function execute()
@@ -21,8 +39,19 @@ class Index extends \Magento\Framework\App\Action\Action
         } else {
             $this->messageManager->addError(__("Invalid SKU"));
         }
-        $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('core/form/index');
-        return $resultRedirect;
+        if ($this->getRequest()->isPost()) {
+            $input = $this->getRequest()->getParams();
+            $post = $this->_commentFactory->create();
+
+            if ($input['sku']) {
+                $post->setSku($input['sku']);
+                $post->setComment($input['msg']);
+                $post->setApproved(0);
+                $post->save();
+            }
+            $resultRedirect = $this->resultRedirectFactory->create();
+            $resultRedirect->setPath('core/form/index');
+            return $resultRedirect;
+        }
     }
 }

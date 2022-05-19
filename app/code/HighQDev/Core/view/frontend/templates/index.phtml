@@ -9,7 +9,7 @@ if ($block->isCustomerLoggedIn()) {
     //Display Customer Name(Firstname + Lastname) and Email
     echo "Registered Customer";
     echo "<br>";
-    $_result =  $block->getCustomer();
+    $_result = $block->getCustomer();
     echo $_result['name'];
     echo "<br>";
     echo $_result['email'];
@@ -17,5 +17,19 @@ if ($block->isCustomerLoggedIn()) {
     echo "This is a Guest Customer";
 }
 
+$collection = $block->getResult();
+foreach ($collection as $item) {
+
+    echo "<br>";
+    echo $item->getEntityId();
+    echo "<br>";
+    echo $item->getSku();
+    echo "<br>";
+    echo $item->getComment();
+    echo "<br>";
+    echo $item->getApproved();
+    echo "<br>";
+
+}
 ?>
 

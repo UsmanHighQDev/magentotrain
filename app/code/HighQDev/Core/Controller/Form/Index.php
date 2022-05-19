@@ -18,10 +18,12 @@ class Index extends \Magento\Framework\App\Action\Action
      * Index constructor.
      * @param \Magento\Framework\App\Action\Context $context
      * @param \Magento\Framework\View\Result\PageFactory $pageFactory
+     * @param \HighQDev\Core\Model\CommentsFactory $commentsFactory
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $pageFactory
+        \Magento\Framework\View\Result\PageFactory $pageFactory,
+        \HighQDev\Core\Model\CommentsFactory $commentsFactory
     ) {
         $this->_pageFactory = $pageFactory;
         return parent::__construct($context);
@@ -33,5 +35,6 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         return $this->_pageFactory->create();
+
     }
 }
