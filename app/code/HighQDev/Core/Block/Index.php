@@ -5,6 +5,7 @@ namespace HighQDev\Core\Block;
 
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Customer\Model\Session;
+use \HighQDev\Core\Model\CommentsFactory;
 
 /**
  * Class Index
@@ -22,12 +23,13 @@ class Index extends \Magento\Framework\View\Element\Template
      * Index constructor.
      * @param Context $context
      * @param Session $_customerSession
+     * @param CommentsFactory $commentsFactory
      * @param array $data
      */
     public function __construct(
         Context $context,
         Session $_customerSession,
-        \HighQDev\Core\Model\CommentsFactory $commentsFactory,
+        CommentsFactory $commentsFactory,
         array $data = []
     ) {
         $this->_customerSession = $_customerSession;
@@ -61,8 +63,7 @@ class Index extends \Magento\Framework\View\Element\Template
      */
     public function getResult()
     {
-        $comment = $this->_commentFactory->create();
-        $collection = $comment->getCollection();
-        return $collection;
+        return $this->_commentFactory->create()->getCollection();
+
     }
 }

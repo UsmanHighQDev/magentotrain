@@ -18,6 +18,7 @@ class Index extends \Magento\Framework\App\Action\Action
      * Index constructor.
      * @param \Magento\Framework\App\Action\Context $context
      * @param \Magento\Framework\View\Result\PageFactory $pageFactory
+     * @param \HighQDev\Core\Model\CommentsFactory $commentsFactory
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
