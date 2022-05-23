@@ -17,19 +17,23 @@ if ($block->isCustomerLoggedIn()) {
     echo "This is a Guest Customer";
 }
 
-$collection = $block->getResult();
-foreach ($collection as $item) {
-
-    echo "<br>";
-    echo $item->getEntityId();
-    echo "<br>";
-    echo $item->getSku();
-    echo "<br>";
-    echo $item->getComment();
-    echo "<br>";
-    echo $item->getApproved();
-    echo "<br>";
-
-}
 ?>
-
+<table>
+    <tr>
+        <th>Id</th>
+        <th>SKU</th>
+        <th>Comment</th>
+        <th>Approved</th>
+    </tr>
+    <?php
+    $collection = $block->getResult();
+    foreach ($collection as $item) {
+        ?>
+        <tr>
+            <td><?php echo $item->getEntityId();; ?></td>
+            <td><?php echo $item->getSku(); ?></td>
+            <td><?php echo $item->getComment(); ?></td>
+            <td><?php echo $item->getApproved(); ?></td>
+        </tr>
+    <?php } ?>
+</table>

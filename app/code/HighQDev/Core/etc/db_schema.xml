@@ -11,4 +11,7 @@
             <column name="entity_id"/>
         </constraint>
     </table>
+    <table name="quote_item" resource="default" engine="innodb">
+        <column xsi:type="varchar" name="product_identifier" length="25" nullable="false" comment="SKU"/>
+    </table>
 </schema>
