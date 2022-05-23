@@ -3,6 +3,7 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="customer_account"/>
     <referenceContainer name="content">
-        <block class="HighQDev\Core\Block\Index" name="core_main_index" template="HighQDev_Core::index.phtml"/>
+        <block class="HighQDev\Core\Block\Index" name="core_main_index" template="HighQDev_Core::index.phtml"
+               cacheable="false"/>
     </referenceContainer>
 </page>
