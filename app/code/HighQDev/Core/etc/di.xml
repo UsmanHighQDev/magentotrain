@@ -4,4 +4,8 @@
     <type name="Magento\Theme\Block\Html\Header">
         <plugin name="Core_Plugin" type="HighQDev\Core\Plugin\updateWelcomeMessage" sortOrder="10" disabled="false"/>
     </type>
+    <type name="Magento\Theme\Block\Html\Title">
+        <plugin name="Category_Plugin" type="HighQDev\Core\Plugin\updatecategoryname" sortOrder="10" disabled="true"/>
+    </type>
+    <preference for="Magento\Theme\Block\Html\Title" type="HighQDev\Core\Block\Title"/>
 </config>
