@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="core" translate="label" sortOrder="10">
+            <label>Core</label>
+        </tab>
+        <section id="text_section" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Text Input</label>
+            <tab>core</tab>
+            <resource>HighQDev_Core::core_config</resource>
+            <group id="text_group" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Text Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Display Text</label>
+                    <comment>This text will display on the frontend.</comment>
+                </field>
+            </group>
+<!--            <group id="password_group" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"-->
+<!--                   showInStore="0">-->
+<!--                <label>Password Configuration</label>-->
+<!--                <field id='password' translate='label' type='password' sortOrder='3' showInDefault='1'-->
+<!--                       showInWebsite='1' showInStore='1'>-->
+<!--                    <label>Password</label>-->
+<!--                    <comment>This will be used for your account login.</comment>-->
+<!--                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>-->
+<!--                </field>-->
+<!--            </group>-->
+<!--            <group id="drop_down_group" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0"-->
+<!--                   showInStore="0">-->
+<!--                <label>List Configuration</label>-->
+<!--                <field id="list_mode" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"-->
+<!--                       showInStore="1">-->
+<!--                    <label>List Mode</label>-->
+<!--                    <source_model>HighQDev\Core\Model\Config\Source\ListMode</source_model>-->
+<!--                </field>-->
+<!--            </group>-->
+        </section>
+    </system>
+</config>
