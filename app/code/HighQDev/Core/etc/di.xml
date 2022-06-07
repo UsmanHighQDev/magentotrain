@@ -4,4 +4,20 @@
     <type name="Magento\Theme\Block\Html\Header">
         <plugin name="Core_Plugin" type="HighQDev\Core\Plugin\updateWelcomeMessage" sortOrder="10" disabled="false"/>
     </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="highqdev_core_comments_listing_data_source" xsi:type="string">
+                    HighQDev\Core\Model\ResourceModel\Comments
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="HighQDev\Core\Model\ResourceModel\Comments\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">highqdev_customer_comments</argument>
+            <argument name="resourceModel" xsi:type="string">HighQDev\Core\Model\ResourceModel\Comments</argument>
+        </arguments>
+    </virtualType>
 </config>
