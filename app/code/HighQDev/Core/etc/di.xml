@@ -7,12 +7,13 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="highqdev_core_comments_listing_data_source" xsi:type="string">
-                    HighQDev\Core\Model\ResourceModel\Comments
+                <item name="highqdevcore_comments_listing_data_source" xsi:type="string">
+                    HighQDev\Core\Model\ResourceModel\Comments\Collection
                 </item>
             </argument>
         </arguments>
     </type>
+
     <virtualType name="HighQDev\Core\Model\ResourceModel\Comments\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
