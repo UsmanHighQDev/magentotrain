@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace HighQDev\Core\Controller\Adminhtml\Comments;
 
+
 /**
  * Class Index
- * @package HighQDev\Core\Controller\Adminhtml\Post
+ * @package HighQDev\Core\Controller\Adminhtml\Comments
  */
 class Index extends \Magento\Backend\App\Action
 {

@@ -5,7 +5,6 @@
         <add id="HighQDev_Core::core" title="Comments Grid" module="HighQDev_Core" sortOrder="51"
              resource="HighQDev_Core::core"/>
         <add id="HighQDev_Core::comments" title="Manage Comments" module="HighQDev_Core" sortOrder="10"
-             action="highqdevcore/comments" resource="HighQDev_Core::comments" parent="HighQDev_Core::core"/>
-        <!--        <add id="HighQDev_Core::core_configuration" title="Configuration" module="HighQDev_Core" sortOrder="99" parent="HighQDev_Core::core" action="adminhtml/system_config/edit/section/core" resource="HighQDev_Core::core_configuration"/>-->
+             action="highqdev_core/comments" resource="HighQDev_Core::comments" parent="HighQDev_Core::core"/>
     </menu>
 </config>
