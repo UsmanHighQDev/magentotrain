@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="HighQDev_Core::core" title="Comments Grid" module="HighQDev_Core" sortOrder="51"
+             resource="HighQDev_Core::core"/>
+        <add id="HighQDev_Core::comments" title="Manage Comments" module="HighQDev_Core" sortOrder="10"
+             action="highqdev_core/comments" resource="HighQDev_Core::comments" parent="HighQDev_Core::core"/>
+    </menu>
+</config>
