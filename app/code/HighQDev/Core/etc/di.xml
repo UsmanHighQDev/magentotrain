@@ -13,7 +13,6 @@
             </argument>
         </arguments>
     </type>
-
     <virtualType name="HighQDev\Core\Model\ResourceModel\Comments\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
@@ -21,4 +20,24 @@
             <argument name="resourceModel" xsi:type="string">HighQDev\Core\Model\ResourceModel\Comments</argument>
         </arguments>
     </virtualType>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="exampleSayHello" xsi:type="object">HighQDev\Core\Console\Sayhello</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="HighQDev\Core\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="HighQDev\Core\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">customLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">HighQDev\Core\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
