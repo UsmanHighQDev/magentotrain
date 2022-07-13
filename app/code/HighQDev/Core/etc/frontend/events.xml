@@ -4,4 +4,7 @@
     <event name="sales_quote_add_item">
         <observer name="after_add_to_cart" instance="HighQDev\Core\Observer\UpdateColumValue"/>
     </event>
+    <event name="customer_register_success">
+        <observer name="email_customer_register" instance="HighQDev\Core\Observer\CustomerRegisterObserver"/>
+    </event>
 </config>
