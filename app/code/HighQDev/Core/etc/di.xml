@@ -21,4 +21,6 @@
             <argument name="resourceModel" xsi:type="string">HighQDev\Core\Model\ResourceModel\Comments</argument>
         </arguments>
     </virtualType>
+    <preference for="HighQDev\Core\Api\PostManagementInterface"
+                type="HighQDev\Core\Model\PostManagement"/>
 </config>
